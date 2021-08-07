@@ -2,11 +2,11 @@
     <a href="https://goreportcard.com/report/github.com/openmock/openmock" target="_blank">
         <img src="https://goreportcard.com/badge/github.com/openmock/openmock">
     </a>
-    <a href="https://circleci.com/gh/openmock/openmock" target="_blank">
-        <img src="https://circleci.com/gh/openmock/openmock.svg?style=shield">
-    </a>
     <a href="https://godoc.org/github.com/openmock/openmock" target="_blank">
         <img src="https://img.shields.io/badge/godoc-reference-green.svg">
+    </a>
+    <a href="https://github.com/openmock/openmock/releases" target="_blank">
+        <img src="https://img.shields.io/github/release/openmock/openmock.svg?style=flat&color=green">
     </a>
 </p>
 
@@ -25,6 +25,7 @@ Currently it supports the following channels:
 # Usage
 Use it with docker.
 ```bash
+$ docker pull ghcr.io/openmock/openmock
 $ docker run -it -p 9999:9999 -v $(pwd)/demo_templates:/data/templates ghcr.io/openmock/openmock
 ```
 
@@ -662,3 +663,8 @@ brew install go-swagger
 
 ### Run
 `OPENMOCK_REDIS_TYPE=redis OPENMOCK_REDIS_URL=<redis Url, e.g. redis://localhost:6379> OPENMOCK_TEMPLATES_DIR=./demo_templates ./om --port 9998`
+
+# License and Credits
+
+- `openmock/openmock` Apache 2.0
+- `checkr/openmock` Apache 2.0
