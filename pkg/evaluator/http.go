@@ -8,10 +8,10 @@ import (
 	"strconv"
 	"strings"
 
-	om "github.com/checkr/openmock"
-	"github.com/checkr/openmock/swagger_gen/models"
 	"github.com/fatih/structs"
 	"github.com/labstack/echo/v4"
+	om "github.com/openmock/openmock"
+	"github.com/openmock/openmock/swagger_gen/models"
 )
 
 var performReplyHTTPAction = func(context *om.Context, mock *om.ActionReplyHTTP) (*models.ReplyHTTPActionPerformed, error) {

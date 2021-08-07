@@ -4,8 +4,8 @@ import (
 	"errors"
 	"testing"
 
-	om "github.com/checkr/openmock"
-	models "github.com/checkr/openmock/swagger_gen/models"
+	om "github.com/openmock/openmock"
+	models "github.com/openmock/openmock/swagger_gen/models"
 	"github.com/prashantv/gostub"
 	"github.com/stretchr/testify/assert"
 )

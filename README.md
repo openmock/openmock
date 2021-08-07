@@ -1,18 +1,18 @@
-[<img src="docs/logo.svg">](https://github.com/checkr/openmock)
-
 <p align="center">
-    <a href="https://goreportcard.com/report/github.com/checkr/openmock" target="_blank">
-        <img src="https://goreportcard.com/badge/github.com/checkr/openmock">
+    <a href="https://goreportcard.com/report/github.com/openmock/openmock" target="_blank">
+        <img src="https://goreportcard.com/badge/github.com/openmock/openmock">
     </a>
-    <a href="https://circleci.com/gh/checkr/openmock" target="_blank">
-        <img src="https://circleci.com/gh/checkr/openmock.svg?style=shield">
+    <a href="https://circleci.com/gh/openmock/openmock" target="_blank">
+        <img src="https://circleci.com/gh/openmock/openmock.svg?style=shield">
     </a>
-    <a href="https://godoc.org/github.com/checkr/openmock" target="_blank">
+    <a href="https://godoc.org/github.com/openmock/openmock" target="_blank">
         <img src="https://img.shields.io/badge/godoc-reference-green.svg">
     </a>
 </p>
 
 # OpenMock
+`openmock/openmock` is a community-driven OSS effort of advancing the development of OpenMock.
+
 OpenMock is a Go service that can mock services in integration tests, staging environment, or anywhere.
 The goal is to simplify the process of writing mocks in various channels.
 Currently it supports the following channels:
@@ -25,7 +25,7 @@ Currently it supports the following channels:
 # Usage
 Use it with docker.
 ```bash
-$ docker run -it -p 9999:9999 -v $(pwd)/demo_templates:/data/templates checkr/openmock 
+$ docker run -it -p 9999:9999 -v $(pwd)/demo_templates:/data/templates ghcr.io/openmock/openmock
 ```
 
 More complete openmock instance (e.g. redis) with docker-compose.
@@ -83,7 +83,7 @@ identified by a key, and a kind:
 
 ### Expect
 
-It represents the channel to listen on and condition for the 
+It represents the channel to listen on and condition for the
 actions of the behavior to be performed. Available channels are:
 
 - http
@@ -112,7 +112,7 @@ we proceed with the actions.
       routing_key: key_in
       queue: key_in
 ```
-  
+
 ### Actions
 Actions are a series of functions to run. Availabe actions are:
 - publish_amqp
@@ -240,7 +240,7 @@ Be aware that values with all digits will be interpreted into `int` type (YAML s
   extend: fruit-of-the-day
   values:
     day: tuesday
-  actions: 
+  actions:
     # sleep then reply_http
     - sleep:
          duration: 1s
@@ -266,7 +266,7 @@ OpenMock leverages [https://golang.org/pkg/text/template/](https://golang.org/pk
   .GRPCPayload     # type: string;      example: {{.GRPCPayload}}
   .GRPCService     # type: string;      example: {{.GRPCService}}
   .GRPCMethod      # type: string;      example: {{.GRPCMethod}}
-  
+
   .KafkaTopic      # type: string;      example: {{.KafkaTopic}}
   .KafkaPayload    # type: string;      example: {{.KafkaPayload}}
 
@@ -279,7 +279,7 @@ OpenMock leverages [https://golang.org/pkg/text/template/](https://golang.org/pk
   ```bash
   # Supported functions defined in ./template_helper.go
 
-    - 
+    -
     - jsonPath    # doc: https://github.com/antchfx/xpath
     - gJsonPath   # doc: https://github.com/tidwall/gjson
     - xmlPath     # doc: https://github.com/antchfx/xpath
@@ -309,8 +309,8 @@ Openmock also by default provides an API on port 9998 to control the running ins
 ```
 
 ## Command Line Interface
-Openmock has a command-line interface to help with certain tasks interacting with openmock instances. This is 
-invoked with the `omctl` command.  This uses the [cobra](https://github.com/spf13/cobra) library to provide a discoverable CLI; run `omctl` for a list of commands / flags. 
+Openmock has a command-line interface to help with certain tasks interacting with openmock instances. This is
+invoked with the `omctl` command.  This uses the [cobra](https://github.com/spf13/cobra) library to provide a discoverable CLI; run `omctl` for a list of commands / flags.
 
 ### CLI: Directory
 #### Push
@@ -566,7 +566,7 @@ $ kt consume -topic hello_kafka_out -offsets all=newest:newest
 
 # Advanced pipeline functions
 To enable advanced mocks, for example, your own encoding/decoding of the kafka messages,
-one can develop by directly importing the `github.com/checkr/openmock` package, making a copy of the swagger-generated server main, and passing in a custom OpenMock.
+one can develop by directly importing the `github.com/openmock/openmock` package, making a copy of the swagger-generated server main, and passing in a custom OpenMock.
 
 For example:
 (see [example](https://github.com/sesquipedalian-dev/openmock-custom-example/blob/master/main.go))
@@ -574,9 +574,9 @@ For example:
 package main
 
 import (
-  "github.com/checkr/openmock"
-  "github.com/checkr/openmock/swagger_gen/restapi"
-  "github.com/checkr/openmock/swagger_gen/restapi/operations"
+  "github.com/openmock/openmock"
+  "github.com/openmock/openmock/swagger_gen/restapi"
+  "github.com/openmock/openmock/swagger_gen/restapi/operations"
   /// etc
 )
 
@@ -586,7 +586,7 @@ func consumePipelineFunc(c openmock.Context, in []byte) (out []byte, error) {
 
 func main() {
   // server set up copy & paste...
-  
+
   // add our custom openmock functionality
   om := &openmock.OpenMock{}
   om.ParseEnv()
@@ -607,11 +607,11 @@ Please note that OpenMock expects the `payload` or `payload_from_file` for a rep
 form of your `Response` protobuf message.  The request should be in the `Request` protobuf message format
 as it is parsed into json to support `jsonPath` and `gJsonPath` operations.
 
-Example configuration by directly importing the `github.com/checkr/openmock` package into a wrapper project.
+Example configuration by directly importing the `github.com/openmock/openmock` package into a wrapper project.
 ```
 func main() {
   // server set up copy & paste...
-  
+
   // add our custom openmock functionality
   om := &openmock.OpenMock{}
   om.GRPCServiceMap = map[string]openmock.GRPCService{
@@ -628,19 +628,19 @@ func main() {
   // rest of server set up copy & paste...
 ```
 
-## Swagger 
+## Swagger
 ### Swagger files / directories:
 ```
 Makefile                    # contains build process for swagger generation
-swagger/                    # directory containing swagger definition, split 
+swagger/                    # directory containing swagger definition, split
                             # up into a few files
    index.yaml               # all the model definitions are in here
    health.yaml              # method definitions relating to e.g. /health
 swagger_gen/                # directory where generated swagger files go
   restapi/
-    configure_open_mock.go  # this file contains code further customized from the 
+    configure_open_mock.go  # this file contains code further customized from the
                             # generated code to hook an implementation into the API
-                            # the makefiles makes sure it is preserved when 
+                            # the makefiles makes sure it is preserved when
                             # generating the other files
 docs/
   api_docs/

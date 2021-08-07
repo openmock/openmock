@@ -3,9 +3,9 @@ package admin
 import (
 	"encoding/json"
 
-	"github.com/checkr/openmock"
-	model "github.com/checkr/openmock/swagger_gen/models"
 	yamlToJSON "github.com/ghodss/yaml"
+	"github.com/openmock/openmock"
+	model "github.com/openmock/openmock/swagger_gen/models"
 	"github.com/sirupsen/logrus"
 	yaml "gopkg.in/yaml.v2"
 )

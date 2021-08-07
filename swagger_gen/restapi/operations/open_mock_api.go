@@ -20,10 +20,10 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/evaluate"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/health"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/template"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/template_set"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/evaluate"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/health"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/template"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/template_set"
 )
 
 // NewOpenMockAPI creates a new OpenMock instance

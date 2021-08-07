@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+
+jobs:
+  unit_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.16
+      - name: Check out source code
+        uses: actions/checkout@v1
+      - run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+      - run: make deps
+      - run: make test
+      - uses: codecov/codecov-action@v2
