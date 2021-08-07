@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"sort"
 
-	om "github.com/checkr/openmock"
-	models "github.com/checkr/openmock/swagger_gen/models"
 	"github.com/fatih/structs"
+	om "github.com/openmock/openmock"
+	models "github.com/openmock/openmock/swagger_gen/models"
 	"github.com/sirupsen/logrus"
 )
 

@@ -1,6 +1,6 @@
-module github.com/checkr/openmock
+module github.com/openmock/openmock
 
-go 1.12
+go 1.16
 
 require (
 	github.com/Masterminds/semver v1.4.2 // indirect
@@ -19,7 +19,6 @@ require (
 	github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/elazarl/goproxy v0.0.0-20190421051319-9d40249d3c2f // indirect
-	github.com/elazarl/goproxy/ext v0.0.0-20190421051319-9d40249d3c2f // indirect
 	github.com/fatih/structs v1.0.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-openapi/errors v0.19.3

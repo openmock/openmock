@@ -3,8 +3,8 @@ package admin
 import (
 	"testing"
 
-	"github.com/checkr/openmock"
-	model "github.com/checkr/openmock/swagger_gen/models"
+	"github.com/openmock/openmock"
+	model "github.com/openmock/openmock/swagger_gen/models"
 	"github.com/stretchr/testify/assert"
 )
 

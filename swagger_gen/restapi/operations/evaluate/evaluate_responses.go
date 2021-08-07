@@ -10,7 +10,7 @@ import (
 
 	"github.com/go-openapi/runtime"
 
-	"github.com/checkr/openmock/swagger_gen/models"
+	"github.com/openmock/openmock/swagger_gen/models"
 )
 
 // EvaluateOKCode is the HTTP code returned for type EvaluateOK

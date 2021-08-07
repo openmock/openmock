@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/checkr/openmock/swagger_gen/models"
+	"github.com/openmock/openmock/swagger_gen/models"
 )
 
 // NewPostTemplateSetParams creates a new PostTemplateSetParams object

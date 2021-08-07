@@ -1,14 +1,14 @@
 package admin
 
 import (
-	"github.com/checkr/openmock"
-	"github.com/checkr/openmock/swagger_gen/models"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/evaluate"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/health"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/template"
-	"github.com/checkr/openmock/swagger_gen/restapi/operations/template_set"
 	"github.com/go-openapi/runtime/middleware"
+	"github.com/openmock/openmock"
+	"github.com/openmock/openmock/swagger_gen/models"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/evaluate"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/health"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/template"
+	"github.com/openmock/openmock/swagger_gen/restapi/operations/template_set"
 )
 
 // Setup initialize all the handler functions, returns whether admin HTTP

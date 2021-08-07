@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 
-	"github.com/checkr/openmock/demo_protobuf"
+	"github.com/openmock/openmock/demo_protobuf"
 )
 
 // arbitraryPort returns a non-used port.

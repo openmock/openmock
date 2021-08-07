@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	om "github.com/checkr/openmock"
-	"github.com/checkr/openmock/swagger_gen/models"
+	om "github.com/openmock/openmock"
+	"github.com/openmock/openmock/swagger_gen/models"
 )
 
 func TestPerformReplyHTTPAction(t *testing.T) {
